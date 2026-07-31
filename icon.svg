@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="118" fill="#8b1a1a"/>
+  <circle cx="256" cy="256" r="177" fill="none" stroke="#fbc900" stroke-width="12" opacity=".9"/>
+  <path d="M84 350 196 182l60 81 57-102 115 189Z" fill="#47725b"/>
+  <path d="m196 182 30 41-44 9Zm117-21 39 68-56-15Z" fill="#fffdf8"/>
+  <circle cx="371" cy="126" r="34" fill="#fbc900"/>
+  <text x="256" y="414" text-anchor="middle" fill="#fffdf8" font-size="78" font-family="serif" font-weight="700">甘南</text>
+</svg>

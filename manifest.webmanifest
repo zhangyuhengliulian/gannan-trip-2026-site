@@ -1,0 +1,14 @@
+{
+  "name": "甘南同行｜2026国庆安全自驾",
+  "short_name": "甘南同行",
+  "description": "五人甘南自驾实时旅行指挥台",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f5f1e8",
+  "theme_color": "#8b1a1a",
+  "lang": "zh-CN",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "./icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
