@@ -2,7 +2,7 @@
  * 核心页面采用 cache-first，实时天气和云端同步采用 network-first。
  * 无信号时仍能打开最近访问过的行程、清单、地图简图与应急资料。
  */
-const CACHE = "gannan-trip-v3-plan-260818";
+const CACHE = "gannan-trip-v4-roadbook-260827";
 const BASE = new URL(self.registration.scope).pathname.replace(/\/$/, "");
 const CORE = [`${BASE}/`, `${BASE}/manifest.webmanifest`, `${BASE}/icon.svg`];
 

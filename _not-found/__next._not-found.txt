@@ -2,4 +2,4 @@
 2:I[93316,["/gannan-trip-2026-site/_next/static/chunks/04qh1nyjmdbvf.js"],"default"]
 3:I[675,["/gannan-trip-2026-site/_next/static/chunks/04qh1nyjmdbvf.js"],"default"]
 4:[]
-0:{"rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"isPartial":false,"staleTime":300,"varyParams":"$W4","buildId":"kfe0RnWA5ZSvrrRjguxTT"}
+0:{"rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"isPartial":false,"staleTime":300,"varyParams":"$W4","buildId":"Ow6bb9vVkQvRrrFASKuim"}
