@@ -1,8 +1,8 @@
 /* 甘南同行 PWA Service Worker
- * 核心页面采用 cache-first，实时天气和云端同步采用 network-first。
+ * 页面与构建资源采用 network-first，避免新版 HTML 命中旧版 CSS/JS 后出现“无样式页面”。
  * 无信号时仍能打开最近访问过的行程、清单、地图简图与应急资料。
  */
-const CACHE = "gannan-trip-v4-roadbook-260827";
+const CACHE = "gannan-trip-v5-premium-260828";
 const BASE = new URL(self.registration.scope).pathname.replace(/\/$/, "");
 const CORE = [`${BASE}/`, `${BASE}/manifest.webmanifest`, `${BASE}/icon.svg`];
 
@@ -45,11 +45,22 @@ self.addEventListener("fetch", (event) => {
     }
     return;
   }
-  event.respondWith(
-    caches.match(event.request).then((cached) => cached || fetch(event.request).then((response) => {
+  const isAppShell = event.request.mode === "navigate" ||
+    url.pathname.includes("/_next/static/") ||
+    ["style", "script", "worker"].includes(event.request.destination);
+
+  if (isAppShell) {
+    event.respondWith(fetch(event.request).then((response) => {
       const copy = response.clone();
       caches.open(CACHE).then((cache) => cache.put(event.request, copy));
       return response;
-    }).catch(() => caches.match(`${BASE}/`)))
-  );
+    }).catch(async () => (await caches.match(event.request)) || caches.match(`${BASE}/`)));
+    return;
+  }
+
+  event.respondWith(caches.match(event.request).then((cached) => cached || fetch(event.request).then((response) => {
+    const copy = response.clone();
+    caches.open(CACHE).then((cache) => cache.put(event.request, copy));
+    return response;
+  })));
 });
